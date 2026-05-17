@@ -12,6 +12,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ProgDispMobiliEAAZ">
         <activity
+            android:name=".EASI"
+            android:exported="false" />
+        <activity
+            android:name=".BMI"
+            android:exported="false" />
+        <activity
             android:name=".BSA"
             android:exported="false" />
         <activity

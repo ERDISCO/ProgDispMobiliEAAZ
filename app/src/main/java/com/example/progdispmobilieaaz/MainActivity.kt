@@ -24,5 +24,14 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this, BSA::class.java)
             startActivity(intent)
         }
+        easi.setOnClickListener {
+            val intent = Intent(this, EASI::class.java)
+            startActivity(intent)
+        }
+        bmi.setOnClickListener {
+            val intent = Intent(this, BMI::class.java)
+            startActivity(intent)
+        }
+
         }
 }

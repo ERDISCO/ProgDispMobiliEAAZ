@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".EASI">
+
+    <LinearLayout
+        style="@style/Schermata">
+
+        <LinearLayout style="@style/Intestazione">
+            <View
+                android:layout_width="40dp"
+                android:layout_height="40dp" />
+            <TextView
+                style="@style/TitoloSchermata"
+                android:text="EASI" />
+            <Button
+                android:id="@+id/btnIndietroEASI"
+                style="@style/BotoneChiudi"
+                android:text="✕" />
+        </LinearLayout>
+
+        <LinearLayout style="@style/Sezione">
+            <TextView
+                style="@style/Etichetta"
+                android:text="Distretto" />
+            <EditText
+                android:id="@+id/DistrettoEASI"
+                style="@style/CampoTesto"
+                android:hint="H, U, T, L"
+                android:inputType="text"
+                android:maxLength="1" />
+        </LinearLayout>
+
+        <LinearLayout style="@style/Sezione">
+            <TextView
+                style="@style/Etichetta"
+                android:text="Eritema (0–3)" />
+            <EditText
+                android:id="@+id/EritemaEASI"
+                style="@style/CampoTesto"
+                android:hint="0-3"
+                android:inputType="number"
+                android:maxLength="1" />
+        </LinearLayout>
+
+        <LinearLayout style="@style/Sezione">
+            <TextView
+                style="@style/Etichetta"
+                android:text="Edema (0–3)" />
+            <EditText
+                android:id="@+id/Edema"
+                style="@style/CampoTesto"
+                android:hint="0-3"
+                android:inputType="number"
+                android:maxLength="1" />
+        </LinearLayout>
+
+        <LinearLayout style="@style/Sezione">
+            <TextView
+                style="@style/Etichetta"
+                android:text="Escoriazione (0–3)" />
+            <EditText
+                android:id="@+id/Escoriazione"
+                style="@style/CampoTesto"
+                android:hint="0-3"
+                android:inputType="number"
+                android:maxLength="1" />
+        </LinearLayout>
+
+        <LinearLayout style="@style/Sezione">
+            <TextView
+                style="@style/Etichetta"
+                android:text="Lichenificazione (0–3)" />
+            <EditText
+                android:id="@+id/Linchenificazione"
+                style="@style/CampoTesto"
+                android:hint="0-3"
+                android:inputType="number"
+                android:maxLength="1" />
+        </LinearLayout>
+
+        <LinearLayout style="@style/Sezione">
+            <TextView
+                style="@style/Etichetta"
+                android:text="Area Coinvolta (0–6)" />
+            <EditText
+                android:id="@+id/AreaCoinEASI"
+                style="@style/CampoTesto"
+                android:hint="0-6"
+                android:inputType="number"
+                android:maxLength="1" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/EASICalculator"
+            style="@style/BotoneCalcola"
+            android:text="CALCOLA" />
+
+        <TextView
+            android:id="@+id/tvRisultatiEASI"
+            style="@style/Risultato"
+            android:hint="Risultato" />
+        <TextView
+            android:id="@+id/tvLivelloEASI"
+            style="@style/Risultato"
+            android:hint="Livello" />
+
+    </LinearLayout>
+</ScrollView>

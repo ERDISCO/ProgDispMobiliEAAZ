@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".BMI">
+
+    <LinearLayout
+        style="@style/Schermata">
+        <LinearLayout style="@style/Sezione">
+
+            <View
+                android:layout_width="40dp"
+                android:layout_height="40dp" />
+
+            <TextView
+                style="@style/TitoloSchermata"
+                android:text="BMI" />
+
+            <Button
+                android:id="@+id/btnIndietroBMI"
+                style="@style/BotoneChiudi"
+                android:text="✕"
+                />
+        </LinearLayout>
+
+        <LinearLayout style="@style/Sezione">
+            <TextView
+                android:text="Altezza"
+                style="@style/Etichetta"/>
+            <EditText
+                android:id="@+id/PickerAltezza"
+                android:hint="esempio: 1.76"
+                style="@style/CampoTesto"/>
+
+            <TextView
+                android:text="M"
+                style="@style/Etichetta" />
+        </LinearLayout>
+        <LinearLayout style="@style/Sezione">
+            <TextView
+                android:text="Peso"
+                style="@style/Etichetta"/>
+            <EditText
+                android:id="@+id/PickerPeso"
+                android:hint="esempio: 76"
+                style="@style/CampoTesto"/>
+
+            <TextView
+                android:text="KG"
+                style="@style/Etichetta" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btnCalcola"
+            android:text="Calcola BMI"
+            style="@style/BotoneCalcola"/>
+        <TextView
+            android:id="@+id/tvRisultati"
+            style="@style/Risultato"
+            android:hint="Risultato" />
+
+        <TextView
+            android:id="@+id/tvSano"
+            style="@style/Risultato"
+            android:hint="Categoria" />
+
+    </LinearLayout>
+</ScrollView>
