@@ -24,13 +24,19 @@ class BMI : AppCompatActivity() {
     {
         var altezza = binding.PickerAltezza.text.toString().toDoubleOrNull()
         val Peso = binding.PickerPeso.text.toString().toDoubleOrNull()
+        if (altezza == null) {
+            binding.PickerAltezza.error = "Inserisci l'altezza"
+        }
+        if (Peso == null) {
+            binding.PickerPeso.error = "Inserisci il peso"
+        }
         if(altezza != null && (altezza / 100.0) > 0.40){
             altezza = (altezza/100.0)
         }
 
         if (Peso != null && altezza != null) {
             val bmi = (Peso / (altezza * altezza))
-            binding.tvRisultati.text = "il tuo BMI è: %.2f".format(bmi)
+            binding.tvRisultati.text = "il tuo BMI è: %.1f".format(bmi)
             binding.tvSano.text = "considerato: %s".format(sanoMessaggio(bmi))
         }
         else{
@@ -38,20 +44,13 @@ class BMI : AppCompatActivity() {
         }
     }
 
-    private fun sanoMessaggio(bmi: Double): String
-    {
-        if (bmi < 18.5)
-            return "sottopeso"
-        if (bmi < 25.0)
-            return "sano"
-        if (bmi < 30.0)
-            return "sovrappeso"
-        if(bmi < 35.0)
-            return "obesita moderata (1)"
-        if(bmi in 35.0..39.9)
-            return "obesita grave (2)"
-        if(bmi >= 40.0 )
-            return "obesita estrema (3)"
-        return "errore"
+    private fun sanoMessaggio(bmi: Double): String = when {
+        bmi < 18.5 -> "sottopeso"
+        bmi < 25.0 -> "sano"
+        bmi < 30.0 -> "sovrappeso"
+        bmi < 35.0 -> "obesita moderata (1)"
+        bmi in 35.0..39.9 -> "obesita grave (2)"
+        bmi >= 40.0 -> "obesita estrema (3)"
+        else -> "errore"
     }
 }

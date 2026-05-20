@@ -46,8 +46,12 @@ class BSA : AppCompatActivity() {
     {
         var altezza = binding.PickerAltezzaBSA.text.toString().toDoubleOrNull()
         val peso = binding.PickerPesoBSA.text.toString().toDoubleOrNull()
-        if(altezza != null && altezza < 3.0){
-            altezza = (altezza*100)
+
+        if (altezza == null) {
+            binding.PickerAltezzaBSA.error = "Inserisci l'altezza"
+        }
+        if (peso == null) {
+            binding.PickerPesoBSA.error = "Inserisci il peso"
         }
         if (peso != null && altezza != null){
             binding.tvRisultatiMonsteller.text = "Monsteller: %.3f m2".format(sqrt(((altezza*peso) / 3600)))
@@ -55,14 +59,6 @@ class BSA : AppCompatActivity() {
             binding.tvRisultatiHaycock.text = "Haycock: %.3f m2".format(0.024265 * altezza.pow(0.3964) * peso.pow(0.5378))
             binding.tvRisultatiGehangeorge.text = "Gehan and George: %.3f m2".format(0.0235 * altezza.pow(0.42246) * peso.pow(0.51456))
             binding.tvRisultatiBoyd.text = "Boyd: %.3f m2".format((0.0003207*altezza.pow(0.3)) * (peso * 1000).pow((0.7285-(0.0188* log10(peso * 1000)))))
-        }
-        else{
-            binding.tvRisultatiMonsteller.text = "Dati mancanti"
-            binding.tvRisultatiDubois.text = "Dati mancanti"
-            binding.tvRisultatiHaycock.text = "Dati mancanti"
-            binding.tvRisultatiGehangeorge.text = "Dati mancanti"
-            binding.tvRisultatiBoyd.text = "Dati mancanti"
-
         }
     }
 }
