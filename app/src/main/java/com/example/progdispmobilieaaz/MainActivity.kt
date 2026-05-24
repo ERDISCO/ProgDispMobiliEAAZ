@@ -3,8 +3,6 @@ package com.example.progdispmobilieaaz
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import android.content.Intent
 import android.widget.Button
 import com.example.progdispmobilieaaz.databinding.ActivityMainBinding
@@ -26,6 +24,10 @@ class MainActivity : AppCompatActivity() {
         }
         easi.setOnClickListener {
             val intent = Intent(this, EASI::class.java)
+            startActivity(intent)
+        }
+        pasi.setOnClickListener {
+            val intent = Intent(this, PASI::class.java)
             startActivity(intent)
         }
         bmi.setOnClickListener {

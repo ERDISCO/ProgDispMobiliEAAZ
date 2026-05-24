@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ProgDispMobiliEAAZ">
         <activity
+            android:name=".PASI"
+            android:exported="false" />
+        <activity
             android:name=".EASI"
             android:exported="false" />
         <activity
